@@ -1,21 +1,25 @@
-import type React from "react"
-import type { Metadata } from "next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"; // ← import Analytics
 
 export const metadata: Metadata = {
   title: "CryptoCLEAR - Cryptocurrency Security Education",
   description: "Learn about cryptocurrency security, identify scams, and stay safe in the digital economy",
-    generator: 'v0.app'
-}
+  generator: "v0.app",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <Analytics /> {/* ← add Analytics here */}
+      </body>
     </html>
-  )
+  );
 }
