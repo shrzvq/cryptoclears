@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 interface HeroSectionProps {
   onNavigate: (page: "blockchain" | "simulator" | "reports") => void
 }
@@ -7,10 +9,14 @@ interface HeroSectionProps {
 export function HeroSection({ onNavigate }: HeroSectionProps) {
   const cryptoLogos = [
     { name: "Bitcoin", path: "/images/bitcoin.png", size: 60 },
-    { name: "Ethereum", path: "https://i.ibb.co/vxVTmHYB/ethereum-eth-round-logo-icon-png-701751694969815akblwl2552.png", size: 55 },
+    {
+      name: "Ethereum",
+      path: "https://i.ibb.co/vxVTmHYB/ethereum-eth-round-logo-icon-png-701751694969815akblwl2552.png",
+      size: 55,
+    },
     { name: "Solana", path: "/images/solana.png", size: 50 },
     { name: "Litecoin", path: "/images/litecoin.png", size: 50 },
-    { name: "Dogecoin", path: "https://s2.coinmarketcap.com/static/img/coins/200x200/74.png", size: 50 },
+    { name: "Dogecoin", path: "/images/dogecoin.png", size: 50 },
   ]
 
   return (
@@ -53,7 +59,15 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         </div>
         <div className="flex items-center justify-center relative h-[500px]">
           <div className="relative w-full h-full flex items-center justify-center">
-            <div className="text-8xl z-10 animate-float">🏦</div>
+            <div className="z-10 animate-float relative w-[200px] h-[200px]">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cryptoclearimage-aNrxoJyks9mGfM1BNqKSegqj7e6WgK.png"
+                alt="CryptoCLEAR Logo"
+                width={200}
+                height={200}
+                className="object-contain drop-shadow-[0_0_20px_rgba(34,211,238,0.6)]"
+              />
+            </div>
 
             {cryptoLogos.map((crypto, index) => {
               const angle = (index / cryptoLogos.length) * 360
