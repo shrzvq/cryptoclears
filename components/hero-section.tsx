@@ -16,7 +16,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
     },
     { name: "Solana", path: "/images/solana.png", size: 50 },
     { name: "Litecoin", path: "/images/litecoin.png", size: 50 },
-    { name: "Dogecoin", path: "/images/dogecoin.png", size: 50 },
+    { name: "Dogecoin", path: "/images/doge.png", size: 50 },
   ]
 
   return (
